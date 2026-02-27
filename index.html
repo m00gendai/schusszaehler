@@ -1,20 +1,36 @@
 <html>
-  <head>
-    <link href="styles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="content"></div>
-    <p>Probe:</p>
-    <div class="shotRow" id="shotsTest"></div>
-    <p>Einzel:</p>
-    <div class="shotRow" id="shotsSingle"></div>
-    <p>Serie 1:</p>
-    <div class="shotRow" id="shotsRapid1"></div>
-    <p>Serie 2:</p>
-    <div class="shotRow" id="shotsRapid2"></div>
-    <p><strong>Total:</strong></p>
-    <div id="total"></div>
-    
-    <script src="script.js"></script>
-  </body>
+    <head>
+        <link href="styles.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="content"></div>
+        <div class="dash">
+            <p>Probe:</p>
+            <div class="shotRow" id="shotsTest">
+                <div class="shotMock" id="shotMockshotsTest"></div>
+            </div>
+            <p>Einzel:</p>
+            <div class="shotRow" id="shotsSingle">
+                <div class="shotMock" id="shotMockshotsSingle"></div>
+            </div>
+            <p>Serie 1:</p>
+            <div class="shotRow" id="shotsRapid1">
+                <div class="shotMock" id="shotMockshotsRapid1"></div>
+            </div>
+            <p>Serie 2:</p>
+            <div class="shotRow" id="shotsRapid2">
+                <div class="shotMock" id="shotMockshotsRapid2"></div>
+            </div>
+            <p><strong>Total:</strong></p>
+            <div id="total"></div>
+        </div>
+        <div class="resetContainer"><button id="reset">Zurücksetzen</button></div>
+        <footer></footer>
+        <dialog>
+            <button class="close">close</button>
+            <input type="number" id="newValue" min="1" max="10" />
+        </dialog>
+        <script src="script.js"></script>
+    </body>
 </html>
