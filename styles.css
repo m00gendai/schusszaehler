@@ -1,41 +1,95 @@
 body{
-  width: 100%;
-  font-family: Arial;
+    font-family: Arial;
+    margin: 0;
+    height: 100dvh;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* stack items vertically */
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
 }
 
 #content{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(6, 3rem);
-  grid-gap: 1rem;
+    width: calc(100% - 2rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    grid-gap: 1rem;
+    padding: 1rem;
 }
 
 .number{
-  padding: 1rem;
-  border: 1px solid black;
-  border-radius: 100%;
-  width: 1rem;
-  aspect-ratio: 1/1;
-  display: grid;
-  place-content: center;
+    border-radius: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-content: center;
+    font-size: 2rem;
+    background: lime;
+    filter: drop-shadow(0px 5px 5px black);
+}
+
+.dash{
+    flex: 1;
+    padding: 1rem;
+    width: calc(100% - 2rem);
 }
 
 .shotRow{
-  width: 100%;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fill, 3rem);
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
+}
+
+.shotMock{
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-content: center;
 }
 
 .shot{
-  padding: 1rem;
-  border: 1px solid black;
-  width: 1rem;
-  aspect-ratio: 1/1;
-  display: grid;
-  place-content: center;
+    background: blue;
+    color: white;
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-content: center;
+    font-size: 1.5rem;
+    filter: drop-shadow(0px 1px 2px black);
+}
+
+p{
+    font-size: 1rem;
 }
 
 #total{
-  font-size: 2rem;
+    font-size: 2rem;
+}
+
+dialog{
+    width: 80%;
+    aspect-ratio: 4/3;
+    font-size: 2rem;
+}
+
+dialog input{
+    width: 80%;
+    font-size: 2rem;
+}
+
+.resetContainer{
+    width: calc(100% - 2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    font-size: 0.5rem;
 }
