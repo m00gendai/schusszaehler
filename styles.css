@@ -1,0 +1,41 @@
+body{
+  width: 100%;
+  font-family: Arial;
+}
+
+#content{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 3rem);
+  grid-gap: 1rem;
+}
+
+.number{
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 100%;
+  width: 1rem;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-content: center;
+}
+
+.shotRow{
+  width: 100%;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, 3rem);
+}
+
+.shot{
+  padding: 1rem;
+  border: 1px solid black;
+  width: 1rem;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-content: center;
+}
+
+#total{
+  font-size: 2rem;
+}
