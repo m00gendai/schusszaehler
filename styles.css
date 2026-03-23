@@ -1,3 +1,13 @@
+:root{
+    --shadow_modal: 0px 5px 7px -2px rgb(50, 50, 50);
+    --shadow_button: 0px 3px 5px -1px rgb(50, 50, 50);
+    --containerPadding: 0.5rem;
+}
+
+*{
+    box-sizing: border-box;
+}
+
 body{
     font-family: Arial;
     margin: 0;
@@ -7,36 +17,106 @@ body{
     align-items: stretch;
 }
 
+p{
+    font-size: 1rem;
+}
+
+dialog{
+    width: 80%;
+    aspect-ratio: 4/3;
+    padding: 0;
+    border: none;
+    outline: 0;
+}
+
+dialog:open{
+        display: flex;
+        box-shadow: var(--shadow_modal);
+}
+
+dialog::backdrop{
+    backdrop-filter: blur(2px);
+}
+
+dialog input{
+    width: 3ch;
+    font-size: 2rem;
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    font-size: 0.5rem;
+    padding: var(--containerPadding);
+}
+
+
 #content{
-    width: calc(100% - 2rem);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-    grid-gap: 1rem;
-    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    padding: var(--containerPadding);
 }
 
 .number{
     border-radius: 100%;
-    width: 100%;
     aspect-ratio: 1/1;
     display: grid;
     place-content: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     background: lime;
-    filter: drop-shadow(0px 5px 5px black);
+    box-shadow: var(--shadow_button);
+    width: calc((100vw / 6) - 1rem);
 }
+
+@media only screen and (orientation: landscape){
+    .number{
+        width: calc((100vw / 11) - 2rem);
+        max-width: 4rem;
+    }
+}
+
+.number:first-child{
+    background: black;
+    color: white;
+}
+
+.number:nth-child(n+2):nth-child(-n+6){
+    background: red;
+    color: white;
+}
+
+.number:nth-child(n+7):nth-child(-n+9){
+    background: yellow;
+}
+
+.number:nth-child(n+10):nth-child(-n+11){
+    background: green;
+}
+
 
 .dash{
     flex: 1;
-    padding: 1rem;
-    width: calc(100% - 2rem);
+    padding: var(--containerPadding);
+    align-items: center;
+}
+
+.dash p{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 1rem;
+    margin: 0 0 0.5rem 0;
 }
 
 .shotRow{
     width: 100%;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
+    margin: 0 0 2rem 0;
 }
 
 .shotMock{
@@ -54,38 +134,48 @@ body{
     display: grid;
     place-content: center;
     font-size: 1.5rem;
-    filter: drop-shadow(0px 1px 2px black);
-}
-
-p{
-    font-size: 1rem;
+    box-shadow: var(--shadow_button);
 }
 
 #total{
     font-size: 2rem;
+    width: 100%;
 }
 
-dialog{
-    width: 80%;
-    aspect-ratio: 4/3;
-    font-size: 2rem;
+.dialog_content{
+    padding: var(--containerPadding);
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;
 }
 
-dialog input{
-    width: 80%;
-    font-size: 2rem;
+.dialog_content span{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.close{
+    aspect-ratio: 1/1;
 }
 
 .resetContainer{
-    width: calc(100% - 2rem);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: var(--containerPadding);
+    gap: 1rem;
 }
 
-footer{
+.resetContainer button{
+    width: calc(50vw - 1rem);
+}
+
+.divider{
     width: 100%;
-    text-align: center;
-    font-size: 0.5rem;
+    height: 0;
+    border: 0.1rem solid black;
+    margin: 1rem 0;
 }
