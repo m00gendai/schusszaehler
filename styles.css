@@ -111,11 +111,22 @@ footer{
     margin: 0 0 0.5rem 0;
 }
 
+.dash_container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+.dash_container_inner{
+    width: 100%;
+}
+
 .shotRow{
     width: 100%;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
     margin: 0 0 2rem 0;
 }
 
